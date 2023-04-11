@@ -13,6 +13,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,13 @@
                     <td>@emp.Id</td>
                     <td>@emp.Name</td>
                     <td>@emp.Email</td>
+                    <td>
+                        <a asp-page="Update"
+                           asp-route-id="@emp.Id"
+                           class="btn btn-primary mx-2">
+                            Update
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>

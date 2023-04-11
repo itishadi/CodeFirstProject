@@ -1,0 +1,55 @@
+﻿@page
+@model CodeFirstProject.Pages.Employees.UpdateModel
+@{
+    var updateMessage = ViewData["Message"]?.ToString();
+
+}
+@if (!string.IsNullOrWhiteSpace(updateMessage))
+{
+    <div class="alert alert-success" role="alert">
+        @updateMessage
+    </div>
+}
+
+
+<h1 class="mb3">Update Employee</h1>
+
+<form method="post">
+    @*Id ska INTE editers!*@
+    <div class="mb-3">
+        <label class="form-label">Id (read only)</label>
+        <input type="text" class="form-control" asp-for="UpdateEmployeeVM.Id" readonly />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="UpdateEmployeeVM.Name" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" asp-for="UpdateEmployeeVM.Email" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input type="number" class="form-control" asp-for="UpdateEmployeeVM.Salary" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" asp-for="UpdateEmployeeVM.DateOfBirth" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <input type="text" class="form-control" asp-for="UpdateEmployeeVM.Department" />
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">
+            Update
+        </button>
+    </div>
+</form>
+

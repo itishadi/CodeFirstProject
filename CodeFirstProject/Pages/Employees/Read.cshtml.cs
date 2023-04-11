@@ -15,7 +15,7 @@ namespace CodeFirstProject.Pages.Employees
         {
             this.dbContext = dbContext;
         }
-        public void OnGet()
+        public void OnGet(Guid id)
         {
             Employees = this.dbContext.Employees.ToList();
         }
